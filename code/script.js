@@ -1,19 +1,15 @@
 // API key: yy4GMy82PIQTTnCdF62v60K7W9ZmnFTQ
-//SEARCH  https://developers.giphy.com/docs/api/endpoint/#search
+// SEARCH  https://developers.giphy.com/docs/api/endpoint/#search
 // https://developers.giphy.com/explorer/
 
-// RESET BUTTON
-
-function refreshPage() {
-  window.location.reload();
-}
-
-// från jenni
-
+// RESET
 const searchForm = document.getElementById("searchForm");
 const searchInput = document.getElementById("searchInput");
 
-let api = `https://api.giphy.com/v1/gifs/search?api_key=yy4GMy82PIQTTnCdF62v60K7W9ZmnFTQ&q=${searchInput.value}&limit=5&offset=0&rating=G&lang=en`;
+const refreshPage = () => {
+  window.location.reload();
+  searchInput.value = "";
+};
 
 // onsubmit triggers on button press and when using the enter key
 searchForm.onsubmit = event => {
@@ -26,44 +22,27 @@ searchForm.onsubmit = event => {
 
 const handleSearch = searchValue => {
   console.log("Will call the api with:", searchValue);
+  searchResponses.innerHTML = "";
 
-  fetch(api)
-    .then(response => {
-      return response.json();
-    })
+  let SearchApiMobile = `https://api.giphy.com/v1/gifs/search?api_key=yy4GMy82PIQTTnCdF62v60K7W9ZmnFTQ&q=${searchValue}&limit=12&offset=0&rating=G&lang=en`;
+  let SearchApi = `https://api.giphy.com/v1/gifs/search?api_key=yy4GMy82PIQTTnCdF62v60K7W9ZmnFTQ&q=${searchValue}&limit=96&offset=0&rating=G&lang=en`;
+
+  fetch(SearchApiMobile)
+    .then(response => response.json())
     .then(json => {
-      search.src = `${json.data[0].images.original.url}`;
+      console.log("json", json);
+      // loopa igenom arrayen och skapa en img tag för varje bild
+      json.data.forEach(item => {
+        searchResponsesMobile.innerHTML += `<img src=${item.images.fixed_width.url} />`;
+      });
     });
-
-  fetch(api)
-    .then(response => {
-      return response.json();
-    })
+  fetch(SearchApi)
+    .then(response => response.json())
     .then(json => {
-      searchone.src = `${json.data[1].images.original.url}`;
-    });
-
-  fetch(api)
-    .then(response => {
-      return response.json();
-    })
-    .then(json => {
-      searchtwo.src = `${json.data[2].images.original.url}`;
-    });
-
-  fetch(api)
-    .then(response => {
-      return response.json();
-    })
-    .then(json => {
-      searchthree.src = `${json.data[3].images.original.url}`;
-    });
-
-  fetch(api)
-    .then(response => {
-      return response.json();
-    })
-    .then(json => {
-      searchfour.src = `${json.data[4].images.original.url}`;
+      console.log("json", json);
+      // loopa igenom arrayen och skapa en img tag för varje bild
+      json.data.forEach(item => {
+        searchResponses.innerHTML += `<img src=${item.images.fixed_width.url} />`;
+      });
     });
 };

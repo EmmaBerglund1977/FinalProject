@@ -5,30 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap"
+      rel="stylesheet"
+    />
     <title>Get your giphy</title>
   </head>
 
   <body>
-    <form id="searchForm" class="search-screen">
-      <div class="line"></div>
-      <h1>Get your giphy</h1>
+    <header>
+      <h1>GET YOUR GIPHY</h1>
+    </header>
+    <form id="searchForm">
       <input
-        placeholder="What´s the feeling?"
+        placeholder="I am feeling..."
         id="searchInput"
         class="search-bar"
         type="search"
+        onfocus="this.value=''"
+        value=""
       />
-
-      <div>
-        <img id="search" src="" height="100" />
-        <img id="searchone" src="" height="100" />
-        <img id="searchtwo" src="" height="100" />
-        <img id="searchthree" src="" height="100" />
-        <img id="searchfour" src="" height="100" />
-      </div>
+      <button type="button" onClick="refreshPage()">try again</button>
+      <div id="searchResponsesMobile" class="mobile-search-responses"></div>
+      <div id="searchResponses" class="search-responses" ></div>
+     
     </form>
-
-    <button type="button" onClick="refreshPage()">Reset</button>
   </body>
   <script src="script.js"></script>
 </html>

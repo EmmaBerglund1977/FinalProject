@@ -1,30 +1,128 @@
 body {
-  font-family: sans-serif;
+  color: #66fcf1;
+  display: flex;
+  flex-direction: column;
+  background: #0b0c10;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Luckiest Guy", cursive;
+}
+
+header {
+  text-align: center;
+  padding: 10px;
+  margin: 30px 0px 30px 0px;
+  background: #0b0c10;
+}
+
+h1 {
+  font-size: 350%;
+  margin-bottom: -10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 415px;
+  width: 100%;
   color: white;
 }
 
-.search-screen {
-  background: #44847d;
-  height: 600px;
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+img {
+  margin: 5px;
+  object-fit: cover;
+  width: 220px;
 }
 
-.line {
-  height: 3px;
-  width: 60%;
-  background: white;
+form div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px 20px 0px 20px;
+}
+
+input[type="search" i] {
+  color: white;
 }
 
 .search-bar {
-  background: #325f5a;
+  background: #42a29e;
   border: none;
-  padding: 8px 16px;
+  padding: 10px 16px;
   font-size: 16px;
   color: white;
-  border-radius: 16px 0 0 16px;
-  align-self: flex-end;
-  width: 200px;
+  border-radius: 16px;
+  align-self: center;
+  width: 280px;
+  margin-bottom: 20px;
+  margin-top: 0px;
 }
+.search-responses {
+  display: none;
+}
+
+button {
+  border: none;
+  width: 100px;
+  border-radius: 16px;
+  color: white;
+  align-self: center;
+  padding: 10px 16px;
+  background: #42a29e;
+  margin: 10px 10px 30px 10px;
+}
+
+/* MEDIA QUERIES  */
+
+@media (min-width: 667px) {
+  h1 {
+    font-size: 700%;
+    margin: 50px 0 20px 0;
+  }
+
+  button {
+    width: 150px;
+    border-radius: 30px;
+    font-size: 120%;
+    margin: 40px;
+  }
+
+  .search-bar {
+    width: 350px;
+    font-size: 150%;
+    border-radius: 30px;
+  }
+  form div {
+    width: 100%;
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  img {
+    width: 250px;
+    object-fit: cover;
+    height:150px;
+  }
+  .mobile-search-responses {
+    display: none;
+  }
+  .search-responses {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+  }
+}
+@media (min-width: 667px) and (max-width: 1024px) {
+  img {
+   max-width:170px;
+   height:150px;
+   object-fit: cover;
+  }
+
+ 
