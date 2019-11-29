@@ -28,7 +28,6 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  /* height: 415px; */
   width: 100%;
   color: white;
   flex: 1;
@@ -99,7 +98,7 @@ footer {
   margin-bottom: 10px;
 }
 
-/* MEDIA QUERIES  */
+/* MEDIA QUERIES MOBILE */
 
 @media (min-width: 667px) {
   h1 {
@@ -144,6 +143,8 @@ footer {
     height: 100%;
   }
 }
+
+/* MEDIA QUERIES IPAD */
 
 @media (min-width: 667px) and (max-width: 1024px) {
   img {

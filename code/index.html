@@ -11,11 +11,9 @@
     />
     <title>Get your giphy</title>
   </head>
-
   <body>
-    <header>
-      <h1>GET YOUR GIPHY</h1>
-    </header>
+    <header><h1>GET YOUR GIPHY</h1></header>
+
     <form id="searchForm">
       <div class="buttons">
         <input
@@ -26,16 +24,15 @@
           onfocus="this.value=''"
           value=""
         />
-
         <button type="button" class="ok-button" onClick="handleSearch()">
           ok
         </button>
       </div>
       <button type="button" onClick="refreshPage()">try again</button>
-
       <div id="searchResponsesMobile" class="mobile-search-responses"></div>
       <div id="searchResponses" class="search-responses"></div>
     </form>
+
     <footer>
       <p>Final Project</p>
       <p>Emma Berglund</p>
