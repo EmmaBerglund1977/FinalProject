@@ -17,19 +17,30 @@
       <h1>GET YOUR GIPHY</h1>
     </header>
     <form id="searchForm">
-      <input
-        placeholder="I am feeling..."
-        id="searchInput"
-        class="search-bar"
-        type="search"
-        onfocus="this.value=''"
-        value=""
-      />
+      <div class="buttons">
+        <input
+          placeholder="I am feeling..."
+          id="searchInput"
+          class="search-bar"
+          type="search"
+          onfocus="this.value=''"
+          value=""
+        />
+
+        <button type="button" class="ok-button" onClick="handleSearch()">
+          ok
+        </button>
+      </div>
       <button type="button" onClick="refreshPage()">try again</button>
+
       <div id="searchResponsesMobile" class="mobile-search-responses"></div>
-      <div id="searchResponses" class="search-responses" ></div>
-     
+      <div id="searchResponses" class="search-responses"></div>
     </form>
+    <footer>
+      <p>Final Project</p>
+      <p>Emma Berglund</p>
+      <p>December 2019</p>
+    </footer>
   </body>
   <script src="script.js"></script>
 </html>

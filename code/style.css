@@ -67,13 +67,34 @@ input[type="search" i] {
 
 button {
   border: none;
-  width: 100px;
   border-radius: 16px;
   color: white;
   align-self: center;
   padding: 10px 16px;
   background: #42a29e;
-  margin: 10px 10px 30px 10px;
+  margin: 10px 0px 30px 10px;
+  font-size: 16px;
+  display: inline;
+}
+
+.buttons {
+  display: inline;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.ok-button {
+  width: 80px;
+}
+
+footer {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
 }
 
 /* MEDIA QUERIES  */
@@ -88,7 +109,10 @@ button {
     width: 150px;
     border-radius: 30px;
     font-size: 120%;
-    margin: 40px;
+  }
+  .ok-button {
+    width: 80px;
+    font-size: 150%;
   }
 
   .search-bar {
@@ -105,7 +129,7 @@ button {
   img {
     width: 250px;
     object-fit: cover;
-    height:150px;
+    height: 150px;
   }
   .mobile-search-responses {
     display: none;
@@ -118,11 +142,11 @@ button {
     height: 100%;
   }
 }
+
 @media (min-width: 667px) and (max-width: 1024px) {
   img {
-   max-width:170px;
-   height:150px;
-   object-fit: cover;
+    max-width: 170px;
+    height: 150px;
+    object-fit: cover;
   }
-
- 
+}
